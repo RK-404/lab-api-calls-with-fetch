@@ -21,10 +21,10 @@ form.addEventListener("submit", (event) => {
 function createCard(result) {
     // console.log(result)
     let header = document.createElement("h2");
-    header.textContent = result.category;
+    header.innerHTML = result.category;
 
     let pTag = document.createElement("p");
-    pTag.textContent = result.question;
+    pTag.innerHTML = result.question;
 
     let button = document.createElement("button");
     button.type = "submit";
@@ -32,7 +32,7 @@ function createCard(result) {
 
     let answer = document.createElement("p");
     answer.className = "hidden";
-    answer.textContent = result.correct_answer;
+    answer.innerHTML = result.correct_answer;
 
     let article = document.createElement("article");
     article.className = "card";
@@ -74,3 +74,7 @@ function displayError(error) {
     article.append(header, msg, errorMsg);
     main.append(article);
 }
+
+
+//To shuffle an array
+// array.sort(() => Math.random() - 0.5);
